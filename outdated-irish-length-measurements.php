@@ -1,6 +1,6 @@
 <?php
 
-function convert_to_centimeter($value, $from_unit) {
+function convert_to_centimeters($value, $from_unit) {
   switch($from_unit) {
     case 'grain':
       return $value * .7;
@@ -34,7 +34,7 @@ function convert_to_centimeter($value, $from_unit) {
   }
 }
 
-function convert_from_centimeter($value, $to_unit) {
+function convert_from_centimeters($value, $to_unit) {
   switch($to_unit) {
     case 'grain':
       return $value / .7;
@@ -69,8 +69,8 @@ function convert_from_centimeter($value, $to_unit) {
 }
 
 function convert_irish_length($value, $from_unit, $to_unit) {
-  $meter_value = convert_to_meters($value, $from_unit);
-  $new_value = convert_from_meters($meter_value, $to_unit);
+  $centimeter_value = convert_to_centimeters($value, $from_unit);
+  $new_value = convert_from_centimeters($centimeter_value, $to_unit);
   return $new_value;
 }
 
