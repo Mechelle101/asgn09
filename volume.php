@@ -1,60 +1,6 @@
 <?php
 
-function convert_to_gallon($value, $from_unit) {
-  switch($from_unit) {
-    case 'bucket':
-      return $value * 4;
-      break;
-    case 'butt':
-      return $value * 108;
-      break;
-    case 'firkin':
-      return $value * 9;
-      break;
-    case 'hogshead':
-      return $value * 54;
-      break;
-    case 'pint':
-      return $value * 0.125;
-      break;
-    case 'gallon':
-      return $value;
-      break;
-    default:
-      return "Unsupported unit.";
-  }
-}
-
-function convert_from_gallon($value, $to_unit) {
-  switch($to_unit) {
-    case 'bucket':
-      return $value / 4;
-      break;
-    case 'butt':
-      return $value / 108;
-      break;
-    case 'firkin':
-      return $value / 9;
-      break;
-    case 'hogshead':
-      return $value / 54;
-      break;
-    case 'gallon':
-      return $value;
-      break;
-    case 'pint':
-      return $value / 0.125;
-      break;
-    default:
-      return "Unsupported unit.";
-  }
-}
-
-function convert_volume($value, $from_unit, $to_unit) {
-  $gallon_value = convert_to_gallon($value, $from_unit);
-  $new_value = convert_from_gallon($gallon_value, $to_unit);
-  return $new_value;
-}
+require_once('includes/functions.php');
 
 $from_value = '';
 $from_unit = '';
